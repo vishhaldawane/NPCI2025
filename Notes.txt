@@ -387,6 +387,196 @@ Guitar
 
 
 
+Packages
+-----------
+		- similar to directories/folders on the OS
+
+		- to organize relevant files and subfolders
+
+		- packages  = directory/folder
+
+		- they must be in small letter
+
+		- no spaces in their names
+
+		. dot is used to separate the folders/subfolders
+
+		purpose : organize the relavant classes
+
+				jungle <-- super package
+				|
+		---------------------------
+		|	|	|	|
+		cave	river	tree	farm <-folders/subpackages
+		|	|	|	|
+		Tiger	Frog	Monkey	FarmHouse <--classes
+		Bee	Fish	Parrot	Hen
+		BeeHieve Crocodile
+		Bear
+
+Access specifiers
+
+	1.           <-- default | available only in the
+				current package/folder
+
+	2. public <-- available anywhere
+			a) any other class in same package
+			b) any subclass    in same package
+
+	3. private <-- not accessible to 
+			a) any other class in the same package
+			b) or any subclass in the same package	
+	4. protected
+			<-- can be referred
+			a) In any non-child in the same package
+			b) In any child in the same package
+				BUT
+			cannot be referred by a non-child
+			in different package 
+
+
+Exception Handling
+--------------------
+
+	Exception = runtime error
+		error occurred during program execution
+
+				Errors
+				|
+		--------------------------------------
+		|	|	|	|	|
+		compile linker	runtime fatal	logical
+		|	 |	 |	  |	 |
+		syntax  missing EXCEPTION crash  4+4=16
+			files/
+			libraries
+
+
+
+				exceptions
+				|
+		------------------------------------
+		|				|
+		checked				unchecked
+		by the compiler			by the compiler
+		|				|
+		javac YourCode.java		javac YourCode.java
+			|			|
+			file handling		some math exprs
+			code			c=a/b; c = 10/0;
+
+		automatic			manually
+		fire extinguishers		operated fire
+						extinguishers
+						we need to call a
+						firemarshall 
+		
+
+		A				B
+		|  man -->			|5		
+		---------------------------------
+		|				|4
+		|				|3
+		|				|2
+		|				|1
+	------------------------------------------------
+			people ..
+
+						
+				long drive()
+				by a car
+		checked				unchecked
+		|				| at what time?
+		|at the garage			| during drive
+		|				|
+		CheckFuelException		SpeedLimitException
+		TyrePressureException		BumperException
+		EngineOilException		FlatTyreException
+		DocumentException		TrafficException
+		BrakeExcpetion			PotHoleException
+
+
+				Object
+				|
+			-----------------------
+			|
+			Throwable
+				|
+		-----------------------------
+		|			|
+		Error			Exception
+					|(checked)
+				-------------------
+				|		|A	B 	C
+			RuntimeException	..	..	..
+				|(unchecked)
+		----------------------
+		|	|	|	
+	NullPointer Arithmetic IndexOutOfBoundsException
+	Exception   Exception
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+fund Transfer
+	source		target		amt
+
+	if(target exists)
+		if(source exists)
+			if(source.bal > amt)
+				debit from source
+				credit to target
+				commit
+			else
+				insuff bal
+		else
+			src not found
+	else
+		trg not found
+
+
+fund Transfer
+	source		target		amt
+
+	try
+	{
+		check target
+		check source
+		check source.bal
+		debit from source
+		credit to target
+		commit	
+	}
+	catch(target doesnt exists)
+	{
+		show trg dosent exists
+	}
+	catch(source doesnt exists)
+	{
+		show src doesnt exist
+	}
+	catch(source.bal insuff) 
+	{
+		show insuff bal
+	}
+	finally {
+		executed regardless of the exception
+	}
+
+
+
+
+ 
 
 
 
