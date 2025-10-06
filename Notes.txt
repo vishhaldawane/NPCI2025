@@ -200,6 +200,23 @@ OOPS Concepts
 	|
 	Surgeon
 
+			types of inheritance
+
+	Inheritance			Inheritance
+	of derivation			of implementation
+	A fun(){}			A fun(); <- declared
+	|				|
+	B fun(){}			B
+	|				|fun(){} MANDATORY
+ in B, the refinement			in B, the implementation
+of fun(){} is optional			of fun(){} is MANDATORY
+- overriding is optional		- no question of overriding
+					as optional, cause it is
+					compulsory
+
+
+
+
 
 Generalization 	vs Specialization
   |			|
@@ -232,19 +249,39 @@ across the entities
 -------------------------------------------------------------
 		final		static		abstract
 -------------------------------------------------------------
-field		constant,	shared by	
-		cannot be	multiple
+field		constant,	shared by	NA	
+		cannot be	multiple	
 		changed		objects
 				of the class
 -------------------------------------------------------------
-		cannot be	can be used
-method		overridden	to refer
-				other static
-				members
+		cannot be	can be used	function 	
+method		overridden	to refer	without the
+				other static	code body
+				members		resides in an
+						abstract class
 -------------------------------------------------------------
-		cannot be
-classes		extended
+		cannot be	NA		a class may
+classes		extended	nested 		have abstract
+				classes		function
+						- cannot create
+						object 
+						- u can have 
+						non-abstract 
+						functions as well
 -------------------------------------------------------------
+
+
+	abstract = incomplete
+
+
+	abstract class meant for inheritance 
+
+
+
+
+
+
+
 
 Stephen Covey = 7 habits of highly effective people
 
@@ -309,6 +346,43 @@ smith	black	50
 	
 	owner	len  col
 	Kite k5 = new Kite()
+
+
+
+	abstract class may or maynot have abstract methods
+	it may have non-abstract methods as well
+
+
+	interface = a class with pure partial contract
+
+		- no scope for non-abstract methods
+
+	
+
+
+			Instrument
+				|use();
+				|packIt();
+				|unpackIt();
+		----------------------------------
+		|				|
+	MusicalInstrument		MedicalInstrument
+		|play();			|operate();
+	----------------------		-----------------
+	|	|			|		|
+StringBased	AirBased	   Surgical	Pathalogical
+Musical		Musical		   Medical	Medical
+Instrument	Instrument	   Instrument	Instrument
+  |tuneStr();	   |clean();	    |sterilize();   |read();
+----------	--------------	---------------	------------
+|	 |	|	   |	|	   |	|	  |
+Guitar Violin	Flute	MouthO	Cutter  Needle GlucoMeter ECGMachine
+|pluck() |bow() |blowAir() |     cut()  poke() countSugar() cntHB()
+Electronic Cello     slideBlowAir()
+Guitar
+
+
+
 
 
 
