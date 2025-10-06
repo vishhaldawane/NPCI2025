@@ -1,0 +1,323 @@
+
+
+
+
+
+Features of Java
+
+1. WORA
+	write once run anywhere
+
+2. Simple
+	- no pointers
+	- legacy syntax of C++ 
+	- no need to know the h/w 
+
+3. Object oriented
+	Association
+		isA hasA usesA producesA
+
+whatever that doesnt depend upon business logic must be automated
+
+4. Robust
+	- automatic garbage collection
+		Account a = new Account();	
+		..
+		..
+		..
+		a = null;
+		..
+	- exception handling
+		runtime errors
+
+
+5. multithreaded
+		Thread t1 = new Thread();
+		Thread t2 = new Thread();
+6. Dynamic
+		Account a = new SavingsAccount();
+			a = new CurrentAccount();
+			a = new FixedDepositAccount();	
+7. Distributed
+		machine1			machine
+		java1	<---------------->	java2
+		Socket				Socket
+
+
+	
+
+---------------------------------------------------------------
+
+- everything MUST be written in a class / struct 
+- java code written in a .java file 
+- writing public class is always optional 
+	e.g
+	Abc.java
+	-------
+	class Abc { }
+	int i; //illegal
+	void fun() { } //illegal
+
+- if u write a public class, then it must be once in its own file
+
+	SavingsAccount.java
+	----------
+	public class SavingsAccount { 
+	}
+
+		SavingsAccount.cpp
+		-------------
+		main() { }
+		---------------
+
+	javac Abc.java
+	| class X { } class Y {} class Z {} public class Abc { }
+	|
+	what would be generated ???? .class files are generated
+	how many? what names ?
+	|
+	each class declared will generate a .class file
+	|
+	X.class Y.class Z.class Abc.class
+	each has potential to run if it has main() method
+
+
+
+		stationary	transitory
+
+		MarkerPen	Human
+		|		|
+		data		data  + behaviour
+		|		  |	      |
+		color,shape,size age,gender  snooze() { }
+		weight, price    name,weight eatAndSleep() { }
+		label etc.			walk(), talk()
+					fight(), meditate()
+					pray()
+
+	Object = state + behaviour
+
+
+	Class					Object
+	-------					---------
+	a design of an object		instance of a class
+			|				|
+			+-------------------------------+
+	desing of a house		actual house(s)
+	blue print of a house		actual house(s)
+					Classname ref = new Ctor()
+	class CricketPlayer		CricketPlayer c1 = 
+	{				new CricketPlayer(....)
+		data member section	c1.hitSixer();
+		int age;		c1.hitFour();
+		String name;		c1.bat();  c1.bat();
+		float strikeRate;	c1.hitSixer();
+		int odi;
+		int noOfTest;
+		int totalRuns;
+		int totalCent;
+		int totalHalfCent;
+
+		member method section
+		void hitSixer(){}
+		void hitFour(){}
+		void bat(){ }
+		..
+		..
+	}
+
+	is "Sachin Tendulkar" a class or an object
+
+	SachinTendulkar  obj1 = new SachinTendulkar();
+
+	CricketPlayer sachinTendulkar = new CriketPlayer();
+
+	CricketPlayer obj2 = new CricketPlayer(50,"Sachin Tendulkar", 15000, 900, 450, 300, 2000, . . . . );
+
+
+			Data Types
+			|
+	--------------------------------------
+	|			|
+	primitive		secondary
+	|				|
+-----------------------------		Object
+|	 |	 |	   |		 |
+integral floting character boolean	---------------
+|	 |	 |	    |		|
+byte  1	float 4	char 2	boolean 1	String
+short 2 double 8
+int   4
+long  8
+
+OOPS Concepts
+-------------
+
+1. Abstraction
+	- it is the "WHAT IS?" part of an object
+	- hiding the complexity of an object
+		- data
+		- procedural
+		- class
+	- provide the simplicity of an object
+	via accessible functions
+
+2. Encapsulation
+	- it is the "HOW IS IT?" part of an object
+	- hide the data [ secure it by private  ]
+	
+3. Polymorphism
+	- ability of a business entity to have many forms
+
+	a) class extension
+	b) function overloading
+		define multiple functions having same name
+		but differntiated on the following terms
+		i) type of argument
+		ii) number of arguments
+		iii) sequence of type of arguments
+
+	c) function overriding
+		let derive class/sub class/ child class
+		redefine the function that is present 
+		in its parent class
+
+	d) opearator overloading
+
+
+
+
+
+
+
+
+4. Inheritance
+	- ability of a business entity to acquire properties
+		from existing business entities
+
+
+	Doctor
+	|
+	Surgeon
+
+
+Generalization 	vs Specialization
+  |			|
+  |			process of identification of
+  |			unique data from an entity
+  |
+process of identification of common data and functions
+across the entities
+
+	Account <--- existing business entity
+	| acno,name,balance, dateOfOpening
+	| set/show/withdraw/deposit
+	------------------------------------------
+		|		|		|
+	SavingsAccount	CurrentAccount  CreditAccount
+	rateOfInterest   overDraftLimit   creditLimit
+		|
+	FixedDepositAccount
+	compoundedBalance
+		|
+	FlexiFixedDepositAccount
+
+	2025 10000 - 10% 1000 = 11000 = 1100 
+	2033 20000
+		
+5. Object communication
+	- passing object as an argument and 
+	  returning object as a return type
+
+-------------------------------------------------------------
+		final		static		abstract
+-------------------------------------------------------------
+field		constant,	shared by	
+		cannot be	multiple
+		changed		objects
+				of the class
+-------------------------------------------------------------
+		cannot be	can be used
+method		overridden	to refer
+				other static
+				members
+-------------------------------------------------------------
+		cannot be
+classes		extended
+-------------------------------------------------------------
+
+Stephen Covey = 7 habits of highly effective people
+
+	"very few"  people on the planet "can think"
+
+			urgent			not urgent
+================================================================
+important		done by			schedule	 
+			you
+			crisis
+			emergency
+			project
+			dead line
+----------------------------------------------------------------
+			delegate		eliminate
+not important					TK
+
+----------------------------------------------------------------
+
+Kites flying
+
+
+			
+		7 hours u must sleep
+		
+Jack
+Jane
+Smith
+Robert
+Rahul
+					Kite(col)
+King		Kite(col)		|(len)
+count(S)	|(len)			|
+5		|			|
+		Jack			Smith		
+		|(own)	|	|	|(own)	|.		
+	---------------------------------------------
+		ground
+
+own	col	len (NS)
+jack	Red	40
+
+own 	col	len (NS)
+smith	black	50
+
+
+	non-static			static 
+	-----------			--------
+	instance's members 		class's members
+
+	owner	len  col  		kiteCount
+	Kite k1 = new Kite()
+	
+	owner	len  col  
+	Kite k2 = new Kite()
+
+	owner	len  col  
+	Kite k3 = new Kite()
+
+	owner	len  col
+	Kite k4 = new Kite()
+	
+	owner	len  col
+	Kite k5 = new Kite()
+
+
+
+
+
+
+
+
+
+
+
+
