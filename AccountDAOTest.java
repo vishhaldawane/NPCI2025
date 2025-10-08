@@ -23,7 +23,7 @@ public class AccountDAOTest {
 		for(Account acc: accList) {
 			System.out.println(acc.getAccountNumber());
 			System.out.println(acc.getAccountName());
-			System.out.println(acc.getAccountBalance());
+			System.out.println(acc.getAccountBalance());	
 		}
 	}
 }	

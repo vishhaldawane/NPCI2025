@@ -14,7 +14,27 @@ public class AccountDAOImpl implements AccountDAO {
 	
 	Connection conn;
 
-	AccountDAOImpl() {
+	public int	findOutTotalBalance() { //exclusive
+
+		int total =0 ;
+		try {
+			Statement sqlStatement = conn.createStatement();
+			
+			//SELECT * FROM ACCOUNT_TBL
+			ResultSet resultSet = sqlStatement.executeQuery("select "
+					+ "sum(account_bal) from account_tbl");
+			
+			if(resultSet.next()) {
+				total = resultSet.getInt(1);
+			}
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return total;
+	}
+	public AccountDAOImpl() {
 		try {
 			System.out.println("Loading driver....");
 			DriverManager.registerDriver(new org.hsqldb.jdbc.JDBCDriver());

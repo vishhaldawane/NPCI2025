@@ -11,6 +11,7 @@ public interface AccountDAO {//poji
 	List<Account> selectAllAccounts();        //RA
 	void          updateAccount(Account acc); //U
 	void          deleteAccount(int acno);    //D
+	int			  findOutTotalBalance();
 	
 
 }
