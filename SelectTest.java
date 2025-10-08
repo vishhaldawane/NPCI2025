@@ -23,7 +23,8 @@ public class SelectTest {
 			
 			Statement sqlStatement = conn.createStatement();
 			
-			ResultSet resultSet = sqlStatement.executeQuery("SELECT * FROM ACCOUNT_TBL");
+			//SELECT * FROM ACCOUNT_TBL
+			ResultSet resultSet = sqlStatement.executeQuery("select * FROM EMPLOYEE");
 			
 			while(resultSet.next()) {
 				System.out.println(resultSet.getInt(1));

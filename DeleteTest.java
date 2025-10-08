@@ -1,5 +1,6 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -7,7 +8,7 @@ import java.util.Scanner;
 
 import myexceptions.AccountNumberDoesNotExistsException;
 
-public class SelectWhereTest {
+public class DeleteTest {
 	public static void main(String[] args) {
 		
 		
@@ -27,23 +28,27 @@ public class SelectWhereTest {
 			Statement sqlStatement = conn.createStatement();
 			
 			//SELECT * FROM ACCOUNT_TBL
-			Scanner scanner = new Scanner(System.in);
-			System.out.println("Enter account number to search : ");
-			int accountNumber = scanner.nextInt();
+			Scanner scanner1 = new Scanner(System.in);
+			System.out.println("Enter EXISTING account number to delete : ");
+			int accountNumber = scanner1.nextInt();
+			
 			
 			ResultSet resultSet = sqlStatement.executeQuery("select * FROM ACCOUNT_TBL "
 					+ "where account_num="+accountNumber); //query is on primary key
 			
-			if(resultSet.next()) { //if that record exists
-				System.out.println(resultSet.getInt(1));
-				System.out.println(resultSet.getString(2));
-				System.out.println(resultSet.getInt(3));
-				System.out.println("---------------------------");
+			if( ! resultSet.next()) { //if that record exists
+				throw new AccountNumberDoesNotExistsException("This account number"
+						+ " DOES NOT exists : "+accountNumber);
 			}
 			else {
-				throw new AccountNumberDoesNotExistsException("This account number does not exists : ");
+				PreparedStatement deleteStatement = conn.prepareStatement(""
+						+ "DELETE from ACCOUNT_TBL WHERE ACCOUNT_NUM="+accountNumber);
+				int rowsDeleted = deleteStatement.executeUpdate();
+				System.out.println("Rows deleted : "+rowsDeleted);
+				deleteStatement.close();
 			}
 			resultSet.close();
+			
 			sqlStatement.close();
 			conn.close();
 			System.out.println("Connection closed...");
