@@ -1,524 +1,132 @@
 
 
+25 yrs
+C++/Java/Spring/DB/Unix
+NLP
+Quantum Mechanics
+Energy Psychology
 
 
+			Design Patterns
 
-Features of Java
-
-1. WORA
-	write once run anywhere
-
-2. Simple
-	- no pointers
-	- legacy syntax of C++ 
-	- no need to know the h/w 
-
-3. Object oriented
-	Association
-		isA hasA usesA producesA
-
-whatever that doesnt depend upon business logic must be automated
-
-4. Robust
-	- automatic garbage collection
-		Account a = new Account();	
-		..
-		..
-		..
-		a = null;
-		..
-	- exception handling
-		runtime errors
+   x y z
 
 
-5. multithreaded
-		Thread t1 = new Thread();
-		Thread t2 = new Thread();
-6. Dynamic
-		Account a = new SavingsAccount();
-			a = new CurrentAccount();
-			a = new FixedDepositAccount();	
-7. Distributed
-		machine1			machine
-		java1	<---------------->	java2
-		Socket				Socket
-
-
-	
-
----------------------------------------------------------------
-
-- everything MUST be written in a class / struct 
-- java code written in a .java file 
-- writing public class is always optional 
-	e.g
-	Abc.java
-	-------
-	class Abc { }
-	int i; //illegal
-	void fun() { } //illegal
-
-- if u write a public class, then it must be once in its own file
-
-	SavingsAccount.java
-	----------
-	public class SavingsAccount { 
-	}
-
-		SavingsAccount.cpp
-		-------------
-		main() { }
-		---------------
-
-	javac Abc.java
-	| class X { } class Y {} class Z {} public class Abc { }
-	|
-	what would be generated ???? .class files are generated
-	how many? what names ?
-	|
-	each class declared will generate a .class file
-	|
-	X.class Y.class Z.class Abc.class
-	each has potential to run if it has main() method
-
-
-
-		stationary	transitory
-
-		MarkerPen	Human
+			who????? am i???
+			|oops programmer
+		--------------------
 		|		|
-		data		data  + behaviour
-		|		  |	      |
-		color,shape,size age,gender  snooze() { }
-		weight, price    name,weight eatAndSleep() { }
-		label etc.			walk(), talk()
-					fight(), meditate()
-					pray()
-
-	Object = state + behaviour
-
-
-	Class					Object
-	-------					---------
-	a design of an object		instance of a class
-			|				|
-			+-------------------------------+
-	desing of a house		actual house(s)
-	blue print of a house		actual house(s)
-					Classname ref = new Ctor()
-	class CricketPlayer		CricketPlayer c1 = 
-	{				new CricketPlayer(....)
-		data member section	c1.hitSixer();
-		int age;		c1.hitFour();
-		String name;		c1.bat();  c1.bat();
-		float strikeRate;	c1.hitSixer();
-		int odi;
-		int noOfTest;
-		int totalRuns;
-		int totalCent;
-		int totalHalfCent;
-
-		member method section
-		void hitSixer(){}
-		void hitFour(){}
-		void bat(){ }
-		..
-		..
-	}
-
-	is "Sachin Tendulkar" a class or an object
-
-	SachinTendulkar  obj1 = new SachinTendulkar();
-
-	CricketPlayer sachinTendulkar = new CriketPlayer();
-
-	CricketPlayer obj2 = new CricketPlayer(50,"Sachin Tendulkar", 15000, 900, 450, 300, 2000, . . . . );
-
-
-			Data Types
-			|
-	--------------------------------------
-	|			|
-	primitive		secondary
-	|				|
------------------------------		Object
-|	 |	 |	   |		 |
-integral floting character boolean	---------------
-|	 |	 |	    |		|
-byte  1	float 4	char 2	boolean 1	String
-short 2 double 8
-int   4
-long  8
-
-OOPS Concepts
--------------
-
-1. Abstraction
-	- it is the "WHAT IS?" part of an object
-	- hiding the complexity of an object
-		- data
-		- procedural
-		- class
-	- provide the simplicity of an object
-	via accessible functions
-
-2. Encapsulation
-	- it is the "HOW IS IT?" part of an object
-	- hide the data [ secure it by private  ]
-	
-3. Polymorphism
-	- ability of a business entity to have many forms
-
-	a) class extension
-	b) function overloading
-		define multiple functions having same name
-		but differntiated on the following terms
-		i) type of argument
-		ii) number of arguments
-		iii) sequence of type of arguments
-
-	c) function overriding
-		let derive class/sub class/ child class
-		redefine the function that is present 
-		in its parent class
-
-	d) opearator overloading
-
-
-
-
-
-
-
-
-4. Inheritance
-	- ability of a business entity to acquire properties
-		from existing business entities
-
-
-	Doctor
-	|
-	Surgeon
-
-			types of inheritance
-
-	Inheritance			Inheritance
-	of derivation			of implementation
-	A fun(){}			A fun(); <- declared
-	|				|
-	B fun(){}			B
-	|				|fun(){} MANDATORY
- in B, the refinement			in B, the implementation
-of fun(){} is optional			of fun(){} is MANDATORY
-- overriding is optional		- no question of overriding
-					as optional, cause it is
-					compulsory
-
-
-
-
-
-Generalization 	vs Specialization
-  |			|
-  |			process of identification of
-  |			unique data from an entity
-  |
-process of identification of common data and functions
-across the entities
-
-	Account <--- existing business entity
-	| acno,name,balance, dateOfOpening
-	| set/show/withdraw/deposit
-	------------------------------------------
-		|		|		|
-	SavingsAccount	CurrentAccount  CreditAccount
-	rateOfInterest   overDraftLimit   creditLimit
-		|
-	FixedDepositAccount
-	compoundedBalance
-		|
-	FlexiFixedDepositAccount
-
-	2025 10000 - 10% 1000 = 11000 = 1100 
-	2033 20000
-		
-5. Object communication
-	- passing object as an argument and 
-	  returning object as a return type
-
--------------------------------------------------------------
-		final		static		abstract
--------------------------------------------------------------
-field		constant,	shared by	NA	
-		cannot be	multiple	
-		changed		objects
-				of the class
--------------------------------------------------------------
-		cannot be	can be used	function 	
-method		overridden	to refer	without the
-				other static	code body
-				members		resides in an
-						abstract class
--------------------------------------------------------------
-		cannot be	NA		a class may
-classes		extended	nested 		have abstract
-				classes		function
-						- cannot create
-						object 
-						- u can have 
-						non-abstract 
-						functions as well
--------------------------------------------------------------
-
-
-	abstract = incomplete
-
-
-	abstract class meant for inheritance 
-
-
-
-
-
-
-
-
-Stephen Covey = 7 habits of highly effective people
-
-	"very few"  people on the planet "can think"
-
-			urgent			not urgent
-================================================================
-important		done by			schedule	 
-			you
-			crisis
-			emergency
-			project
-			dead line
-----------------------------------------------------------------
-			delegate		eliminate
-not important					TK
-
-----------------------------------------------------------------
-
-Kites flying
-
-
+		where		when
+		|space		|time
+	----------------------------------
+	|		|		|
+	why		what		how
+	|reason		|inFORMation	|implement[ action ]
 			
-		7 hours u must sleep
-		
-Jack
-Jane
-Smith
-Robert
-Rahul
-					Kite(col)
-King		Kite(col)		|(len)
-count(S)	|(len)			|
-5		|			|
-		Jack			Smith		
-		|(own)	|	|	|(own)	|.		
-	---------------------------------------------
-		ground
-
-own	col	len (NS)
-jack	Red	40
-
-own 	col	len (NS)
-smith	black	50
 
 
-	non-static			static 
-	-----------			--------
-	instance's members 		class's members
+Design pattern are typical solutions to commonly occuring problems 
+in software design.
 
-	owner	len  col  		kiteCount
-	Kite k1 = new Kite()
-	
-	owner	len  col  
-	Kite k2 = new Kite()
+	intent : problem and its solution
 
-	owner	len  col  
-	Kite k3 = new Kite()
+	motivation : possibility
 
-	owner	len  col
-	Kite k4 = new Kite()
-	
-	owner	len  col
-	Kite k5 = new Kite()
+	structure : how to do it - relation of parts
+
+	code : actual implementation
+
+
+		types of patterns
+
+	1. Creational
+		create pillar
+
+	2. Structural
+		organize these pillars to make bridge
+
+	3. Behavioral
+		interaction between objects, pillars
 
 
 
-	abstract class may or maynot have abstract methods
-	it may have non-abstract methods as well
-
-
-	interface = a class with pure partial contract
-
-		- no scope for non-abstract methods
-
-	
-
-
-			Instrument
-				|use();
-				|packIt();
-				|unpackIt();
+			Association of objects
+				|
 		----------------------------------
-		|				|
-	MusicalInstrument		MedicalInstrument
-		|play();			|operate();
-	----------------------		-----------------
-	|	|			|		|
-StringBased	AirBased	   Surgical	Pathalogical
-Musical		Musical		   Medical	Medical
-Instrument	Instrument	   Instrument	Instrument
-  |tuneStr();	   |clean();	    |sterilize();   |read();
-----------	--------------	---------------	------------
-|	 |	|	   |	|	   |	|	  |
-Guitar Violin	Flute	MouthO	Cutter  Needle GlucoMeter ECGMachine
-|pluck() |bow() |blowAir() |     cut()  poke() countSugar() cntHB()
-Electronic Cello     slideBlowAir()
-Guitar
+		|	|		|	|
+		isA	hasA		usesA	producesA
+
+
+	Object = data + functions
+
+		class Machine
+		{
+			data + functions
+		}
+		class WashingMachine extends Machine //isA
+		{
+			WashingTub washTub = new WashingTub();//hasA
+			
+			produce		use	   use     use       use
+			Laundry wash(Detergent d, Water w, Cloth c[],Electricity e)
+			{
+				washing loop activity of wash,rinse and spin etc
+				Laundry laundry = new Laundry(....);
+				return laundry;
+			}
+			
+		}
+		class Laundry
+		{
+			bill of electricity + detergent + water 
+		}
+		class WashRoom extends Room
+		{
+			BathTub bathTub = new BathTub();
+
+		}
+		class Tub { }
+		class WashingTub extends Tub { }
+		class BathTub extends Tub  { }
+
+		class House
+		{
+			WashRoom washRoom = new WashRoom(); //hasA
+		}
 
 
 
 
 
+	Employee emp1 = new Employee(.........);
 
 
-Packages
------------
-		- similar to directories/folders on the OS
-
-		- to organize relevant files and subfolders
-
-		- packages  = directory/folder
-
-		- they must be in small letter
-
-		- no spaces in their names
-
-		. dot is used to separate the folders/subfolders
-
-		purpose : organize the relavant classes
-
-				jungle <-- super package
-				|
-		---------------------------
-		|	|	|	|
-		cave	river	tree	farm <-folders/subpackages
-		|	|	|	|
-		Tiger	Frog	Monkey	FarmHouse <--classes
-		Bee	Fish	Parrot	Hen
-		BeeHieve Crocodile
-		Bear
-
-Access specifiers
-
-	1.           <-- default | available only in the
-				current package/folder
-
-	2. public <-- available anywhere
-			a) any other class in same package
-			b) any subclass    in same package
-
-	3. private <-- not accessible to 
-			a) any other class in the same package
-			b) or any subclass in the same package	
-	4. protected
-			<-- can be referred
-			a) In any non-child in the same package
-			b) In any child in the same package
-				BUT
-			cannot be referred by a non-child
-			in different package 
+	Employee emp2 = new Employee();
 
 
-Exception Handling
---------------------
-
-	Exception = runtime error
-		error occurred during program execution
-
-				Errors
-				|
-		--------------------------------------
-		|	|	|	|	|
-		compile linker	runtime fatal	logical
-		|	 |	 |	  |	 |
-		syntax  missing EXCEPTION crash  4+4=16
-			files/
-			libraries
-
-
-
-				exceptions
-				|
-		------------------------------------
-		|				|
-		checked				unchecked
-		by the compiler			by the compiler
-		|				|
-		javac YourCode.java		javac YourCode.java
-			|			|
-			file handling		some math exprs
-			code			c=a/b; c = 10/0;
-
-		automatic			manually
-		fire extinguishers		operated fire
-						extinguishers
-						we need to call a
-						firemarshall 
-		
-
-		A				B
-		|  man -->			|5		
-		---------------------------------
-		|				|4
-		|				|3
-		|				|2
-		|				|1
-	------------------------------------------------
-			people ..
-
-						
-				long drive()
-				by a car
-		checked				unchecked
-		|				| at what time?
-		|at the garage			| during drive
-		|				|
-		CheckFuelException		SpeedLimitException
-		TyrePressureException		BumperException
-		EngineOilException		FlatTyreException
-		DocumentException		TrafficException
-		BrakeExcpetion			PotHoleException
-
-
-				Object
-				|
-			-----------------------
-			|
-			Throwable
-				|
-		-----------------------------
-		|			|
-		Error			Exception
-					|(checked)
-				-------------------
-				|		|A	B 	C
-			RuntimeException	..	..	..
-				|(unchecked)
-		----------------------
-		|	|	|	
-	NullPointer Arithmetic IndexOutOfBoundsException
-	Exception   Exception
-
-
-
-
-		
+1. Singleton
+2. Factory
+3. Abstract factory
+4. Prototype
+5. Builder
+6. Adapter
+7. Proxy
+8. Template
+9. Iterator
+10. Observer
+11. Mediator
+12. Strategy  
+13. Decorator 
+14. Bridge 
+15. Composite 
+16. Facade
+17. Flyweight
+18. Memento
+19. State
+20. Command
+21. Chain Of Responsibility
+22. Interpreter
+23. Object pool 20 
 
 
 
@@ -528,55 +136,21 @@ Exception Handling
 
 
 
-fund Transfer
-	source		target		amt
-
-	if(target exists)
-		if(source exists)
-			if(source.bal > amt)
-				debit from source
-				credit to target
-				commit
-			else
-				insuff bal
-		else
-			src not found
-	else
-		trg not found
-
-
-fund Transfer
-	source		target		amt
-
-	try
-	{
-		check target
-		check source
-		check source.bal
-		debit from source
-		credit to target
-		commit	
-	}
-	catch(target doesnt exists)
-	{
-		show trg dosent exists
-	}
-	catch(source doesnt exists)
-	{
-		show src doesnt exist
-	}
-	catch(source.bal insuff) 
-	{
-		show insuff bal
-	}
-	finally {
-		executed regardless of the exception
-	}
+24. DAO
+25. MVC
+26. DI
 
 
 
 
- 
+
+
+
+
+
+
+
+
 
 
 
