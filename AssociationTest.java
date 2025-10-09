@@ -52,8 +52,30 @@ class WashingMachine extends Machine {//isA   - Aggregation
 	
 	WashingTub washingTub = new WashingTub(); //hasA - composition
 
+	
+	 WashingMachine( ) {
+		
+	}
+
+	 WashingMachine(String brand) {
+		super();
+	}
+
+	 WashingMachine(float price) {
+		super();
+	}
+	 WashingMachine(String price, float capacity) {
+		super();
+	}
+
+	
+	 WashingMachine(WashingTub washingTub) {
+		super();
+		this.washingTub = washingTub;
+	}
+
 								//uses		uses			uses		uses
-	Laundry wash(WashingPowder washPowder, Water water, List<Cloth> clothArrayList, Electricity electricity) {
+	 Laundry wash(WashingPowder washPowder, Water water, List<Cloth> clothArrayList, Electricity electricity) {
 		System.out.println("-- Hi Washing Program started --");
 		System.out.println("-- Calculating the load --");
 		float totalWeight = 0;
@@ -77,10 +99,10 @@ class WashingMachine extends Machine {//isA   - Aggregation
 		return laundry;
 	}
 	
-	void rinse() {
+	 void rinse() {
 		
 	}
-	void spin() {
+	 void spin() {
 		
 	}
 	
