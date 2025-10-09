@@ -9,5 +9,62 @@
   	<hibernate.version>5.4.10.Final</hibernate.version>
   	
   </properties>
+
+ 
   
+	<dependencies>
+	
+
+	<dependency>   <!-- 1 -->
+  		<groupId>org.springframework</groupId> <!-- goes to this website -->
+  		<artifactId>spring-context</artifactId> <!-- and downloads teh jar file named as "spring-context.5.1.13.RELEASE.jar" -->
+  		<version>${spring-framework.version}</version>								    <!--       artifact    version -->
+  	</dependency>	
+  	
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-test</artifactId>
+  		<version>${spring-framework.version}</version>
+  	</dependency>
+  	
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-jdbc</artifactId>
+  		<version>${spring-framework.version}</version>
+  	</dependency>
+  	
+
+  	
+
+
+	  <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+	<dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-core</artifactId>
+	    <version>5.4.16.Final</version>
+	</dependency>
+
+	  <!-- https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.1-api -->
+	<dependency>
+	    <groupId>org.hibernate.javax.persistence</groupId>
+	    <artifactId>hibernate-jpa-2.1-api</artifactId>
+	    <version>1.0.2.Final</version>
+	</dependency>
+	
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring-framework.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${spring-framework.version}</version>
+		</dependency>
+		
+	</dependencies>
+  
+  	
+
   
