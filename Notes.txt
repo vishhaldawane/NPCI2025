@@ -905,6 +905,138 @@ Pavan MS	Benten Gadgets Omnitrix DNAPool DNA Alien
 
 
 
+Reflection	and 	Annotation
+
+
+
+
+	Reflection = projection of an image from a mirror
+
+
+			Every instance of an "Object" class
+			got a method called getClass()
+			that returns an instance of
+			class Class
+
+	Object			Class
+	|			|
+	11 methods		to hold metadata(data of data)
+				
+	toString()		Class classObj = new Class();
+	hashCode()
+	equals()
+	clone()
+	finalize()
+
+	getClass()
+	
+	wait()
+	wait()
+	wait()
+	notifyAll()
+	notify()
+
+		class Object {
+			Class getClass()
+			{
+			}
+		}
+		class Employee
+		{
+		}
+
+
+	Employee e1 = new Employee();
+	e11.
+
+What is framework?
+
+	- semi-developed application
+
+
+	Spring is DI framework
+	
+	PhotoFramework shop		vs	manually creating the
+						frame at home
+
+
+	 varieties of frames
+	 varieties of designs
+	 varieties of material
+	 glass types
+	 shapes
+	 - what they dont have
+	 is the photo
+
+
+
+	To make a project in STS
+	there are varieties
+
+	1. a java project
+			bin - .class files
+			src - source code
+
+	Maven Project !!!!!!!!!!!!!
+
+		project management tool
+
+	Archetypes of projects
+		|
+	ready made 
+	structure with relevant files
+
+
+
+	
+	pom.xml - project object model
+
+/users/amit/.m2
+
+			MyPayments
+			  |
+		--------------------
+		|		|  local folder .m2, internal, net
+		src		pom.xml 		      (maven
+		|		|				central)
+	-------------------    depends upon hsqldb
+	|		|
+	main		test
+	|		|
+	----------	java
+	|	|
+	java	resources	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
