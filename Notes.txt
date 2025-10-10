@@ -1011,6 +1011,57 @@ What is framework?
 
 
 
+			Java Technology
+				|
+		---------------------------------
+		|		|		|
+		JSE		JEE		JME
+		|		|		|
+		Core		Enterprise	Micro
+		|			|
+	oops concepts		----------------
+	lang fundas		|		|
+	association		Web		EJB
+	packages		|		|
+	exceptions		servlets	------------------	
+	generics		JSP		|	|	|
+	collection		|MVC		Session Entity Message
+	jdbc			|		| 	  |       |
+	file i/o		angular	    --------    --------  ----
+	|			react MVVM  |      |     |     |  |   |
+	Adv Java                       Stateless Statful BMP  CMP sms mail
+	|		bookmyticket    ->
+	Networking
+	RMI
+
+	machine1				machine2
+	|					|
+	jvm					jvm
+	|					|
+						acno name bal
+						-----------------
+						|		|
+		proxy1			proxy2	-----------------
+	sav --->with1			with2	100	with/depo/
+	?						sav(..)
+
+
+Enterprise application Features
+--------------------------------
+
+1. Remote capability
+
+2. high availability 24 X 7
+
+3. multithreaded
+
+4. pooling of resources
+
+5. caching of resource
+
+6. transaction management
+
+7. security management
 
 
 
@@ -1033,6 +1084,150 @@ What is framework?
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@compo
+class TicketEnquiry
+{
+
+		List<Flight> findoutflight(s,dest,dt)
+		{
+		}
+}
+
+@cmp
+@scope("prototype"
+class Ticket
+{
+	tid
+	source
+	dest
+	cost
+}
+
+		your airline counter
+	TicketEnquiry enquiry = new TicketEnquiry();
+	enquiry(mum,del,19);
+	enquiry(mum,fra,18);
+	enquiry(mum,chen,16);
+	enquiry(mum,hyd,29);
+	enquiry(mum,beng,19);
+	enquiry(mum,pun,19);
+
+
+
+
+
+
+
+		class Microwave
+		{
+
+			Coil coil = new Coil();//mandatory 
+		}
+
+
+
+
+Microwave m1 =new Microwave();
+Microwave m1 =new Microwave();
+Microwave m1 =new Microwave();
+Microwave m1 =new Microwave();
+Microwave m1 =new Microwave();
+Microwave m1 =new Microwave();
+Microwave m1 =new Microwave();
+Microwave m1 =new Microwave();
+Microwave m1 =new Microwave();
+Microwave m1 =new Microwave();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	green
+	red
+	blue - 
+
+		font name - arial
+
+	size 10
+
+
+	Raman is learning java
+
+
+
+
+	class Font
+	{
+		int size;
+		String fontname;
+		String color;
+
+		Font(int s, String fn, String c) {
+			size = s;
+			fontname=fn;
+			color=c;
+		}
+		set/get
+		
+	}
+
+	int main()
+	{
+		Font firstFont = new Font(10,"Arial","red");
+
+		String myline="raman is learning";
+
+		firstFont.setColor("green");
+		fifrstFont.setSize(20);	
+
+	}
+
+
+
+
+
+	CMP
+	|
+-------------------
+|
+1. pom.xml --> spring data jpa dependency to be added
+2. pom.xml --> hsqldb dependency to be added
+3. Account.java to be annotated with @Entity, @Table and @Id
+4. application.properties file must be filled up with various key/value
+	pairs for spring data jpa settings
+
+Hibernate: create table account_master 
+	(acno integer not null, 
+	 acbal integer, 
+         acname varchar(20), 
+	 primary key (acno))
+
+5. extend from JpaRepository interface
+6. test case to verify if it is working or not
 
 
 
