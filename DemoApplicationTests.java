@@ -1,11 +1,15 @@
 package com.example.demo;
 
+import java.math.BigDecimal;
 import java.util.Optional;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import com.example.demo.entities.Account;
+import com.example.demo.repositories.AccountRepository;
 
 @SpringBootTest
 class DemoApplicationTests {
@@ -62,36 +66,6 @@ class DemoApplicationTests {
 			accountRepository.delete(account);
 		}
 	}
-	
-	@Override
-	public int hashCode() {
-		// TODO Auto-generated method stub
-		return super.hashCode();
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		// TODO Auto-generated method stub
-		return super.equals(obj);
-	}
-
-	@Override
-	protected Object clone() throws CloneNotSupportedException {
-		// TODO Auto-generated method stub
-		return super.clone();
-	}
-
-	@Override
-	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
-	}
-
-	@Override
-	protected void finalize() throws Throwable {
-		// TODO Auto-generated method stub
-		super.finalize();
-	}
 
 	@Test
 	public void insertAccountTest() {
@@ -131,6 +105,18 @@ class DemoApplicationTests {
 	}
 	
 	
+	@Test
+	public void testSumByAccNameStartingWith() {
+
+		//JPQL
+		Float sum1 = accountRepository.getSumOfBalanceWhereNameStartingWith1("J%");
+		System.out.println("Sum1 : "+sum1);
+		
+		Float sum2 = accountRepository.getSumOfBalanceWhereNameStartingWith2("S%");
+		System.out.println("Sum2 : "+sum2);
+		
+		
+	}
 	
 	
 	

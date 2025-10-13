@@ -1,4 +1,4 @@
-package service;
+package com.example.demo.service;
 
 public class AccountServiceTest {
 	public static void main(String[] args) {

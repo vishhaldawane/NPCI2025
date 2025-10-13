@@ -1,15 +1,23 @@
-package service;
+package com.example.demo.service;
 
 import java.util.List;
 
-import dao.Account;
-import dao.AccountDAO;
-import dao.AccountDAOImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import com.example.demo.entities.Account;
+import com.example.demo.repositories.AccountRepository;
+@Service
 public class AccountServiceImpl implements AccountService {
-
-	AccountDAO accountDAO = new AccountDAOImpl();
-	
+	@Autowired	AccountRepository accountRepository;
+	@Override	public int findOutTheTotalLiabilityOfTheAccounts() {
+		List<Account> accList = accountRepository.findAll();
+		int totalLiability=0;
+		for(Account account:accList) totalLiability+=account.getAccountBalance();
+		return totalLiability;
+	//	int totalLiability=accountRepository.findOutTotalBalance();
+	//	return totalLiability;
+	}
 	@Override
 	public List<Account> findOutTotalBalanceOfHolderNameStartingWith(String hint) {
 		// TODO Auto-generated method stub
@@ -28,18 +36,7 @@ public class AccountServiceImpl implements AccountService {
 		return null;
 	}
 
-	@Override
-	public int findOutTheTotalLiabilityOfTheAccounts() {
-		/*List<Account> accList = accountDAO.selectAllAccounts();
-		int totalLiability=0;
-		for (Account account : accList) {
-			totalLiability+=account.getAccountBalance();
-		}
-		return totalLiability;*/
-		
-		int totalLiability=accountDAO.findOutTotalBalance();
-		return totalLiability;
-	}
+	
 
 	@Override
 	public List<Account> findOutAccountsNumberGreaterThan(int acno) {
