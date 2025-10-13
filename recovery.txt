@@ -1,0 +1,36 @@
+
+
+
+
+		restaurant
+
+
+	Juice counter	Dosa Counter		Tea/kaapi counter	
+	
+1	juice_tbl		dosa_tbl		tea_tbl
+2	Juice			Dosa			Tea
+	 id,name,price		id,name,price		id,name,price
+	|			|			|
+3	JuiceRepo		DosaRepo		TeaRepo
+	  crud			  crud			  crud
+	  custom crud		  custom crud		  custom crud
+----------------------------------------------------------------------
+			FoodService
+				| Dosa serveDosa();
+				| Juice serveJuice();
+				| Tea   serveTea();
+				| List<Object> serveDosaAndTea();
+				| List<Object> serve JuiceAndTea()	
+			FoodServiceImpl
+			
+
+
+
+
+
+			controller
+				|
+			3 people at the table
+
+
+
