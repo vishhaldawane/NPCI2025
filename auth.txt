@@ -1,0 +1,3 @@
+ return Arrays.stream(this.authorities.split(AUTHORITIES_DELIMITER))
+                     .map(SimpleGrantedAuthority::new)
+                     .collect(Collectors.toList());
